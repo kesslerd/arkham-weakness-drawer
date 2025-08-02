@@ -11,6 +11,7 @@ import { SelectorComponent } from '../selector.component/selector.component';
   template: `
     <selector
       [options]="options"
+      title="Traits"
       (selectionChange)="onSelectorChange($event)">
     </selector>
   `
@@ -24,8 +25,6 @@ export class TraitSelectorComponent implements OnInit {
   ngOnInit(): void {
     this.http.get<string[]>('assets/traits.json').subscribe(data => {
       this.options = data.map(t => ({ label: t, value: t }));
-      const initialSelection = new Set(Object.keys(data));
-      this.selectionChange.emit(initialSelection);
     });
   }
 

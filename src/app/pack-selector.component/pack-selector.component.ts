@@ -11,6 +11,7 @@ import { SelectorComponent } from '../selector.component/selector.component';
   template: `
     <selector
       [options]="options"
+      title="Expansion"
       (selectionChange)="selectionChange.emit($event)">
     </selector>
   `

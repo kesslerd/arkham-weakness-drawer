@@ -12,7 +12,10 @@ export interface SelectorOption {
 })
 export class SelectorComponent implements OnChanges {
   @Input() options: SelectorOption[] = [];
+  @Input() title: string = "";
   @Output() selectionChange = new EventEmitter<Set<string>>();
+
+  showFilter = false;
 
   selected: Set<string> = new Set();
   allSelected = false;
@@ -51,5 +54,9 @@ export class SelectorComponent implements OnChanges {
 
   isChecked(value: string): boolean {
     return this.selected.has(value);
+  }
+
+  toggleFilters() {
+    this.showFilter = !this.showFilter;
   }
 }

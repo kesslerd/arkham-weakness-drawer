@@ -22,7 +22,7 @@ import { WeaknessListComponent } from './weakness-list.component/weakness-list.c
   styleUrl: './app.scss'
 })
 export class App implements OnInit {
-  protected readonly title = signal('Random Weakness Picker');
+  protected readonly title = 'Random Basic Weakness Picker';
 
   allWeaknesses: BasicWeakness[] = [];
   lastDrawnWeaknesses: BasicWeakness[] = [];
@@ -30,8 +30,6 @@ export class App implements OnInit {
 
   selectedPacks: Set<string> = new Set();
   selectedTraits: Set<string> = new Set();
-
-  showTraits = false;
 
   constructor(private http: HttpClient) { }
 
@@ -47,10 +45,6 @@ export class App implements OnInit {
 
   onTraitChange(traits: Set<string>) {
     this.selectedTraits = traits;
-  }
-
-  toggleFilters() {
-    this.showTraits = !this.showTraits;
   }
 
   clear(): void {

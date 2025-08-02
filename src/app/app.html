@@ -1,14 +1,11 @@
 <h1>{{ title }}</h1>
 
-<pack-selector (selectionChange)="onPackChange($event)"></pack-selector>
-
-<button (click)="toggleFilters()">
-  {{ showTraits ? 'Hide Trait Filters' : 'Show Trait Filters' }}
-</button>
-
-@if (showTraits) {
-<trait-selector (selectionChange)="onTraitChange($event)"></trait-selector>
-}
+<div>
+  <pack-selector (selectionChange)="onPackChange($event)"></pack-selector>
+</div>
+<div>
+  <trait-selector (selectionChange)="onTraitChange($event)"></trait-selector>
+</div>
 
 <div class="actions">
   <button (click)="clear()">Clear</button>

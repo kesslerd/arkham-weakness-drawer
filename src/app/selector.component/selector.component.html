@@ -1,3 +1,10 @@
+<div class="collapsible-header" (click)="toggleFilters()">
+    <span class="title">{{ title }} Filters</span>
+    <span class="arrow" [class.open]="showFilter">▼</span>
+</div>
+
+
+@if(showFilter) {
 <div class="toolbar">
     <button type="button" (click)="toggleAll()">
         {{ allSelected ? 'Deselect All' : 'Select All' }}
@@ -12,6 +19,5 @@
         {{ opt.label }}
     </label>
     }
-
-
 </div>
+}
