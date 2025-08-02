@@ -1,10 +1,10 @@
 <h1>{{ title }}</h1>
 
 <div>
-  <pack-selector (selectionChange)="onPackChange($event)"></pack-selector>
+  <pack-selector (selectionChange)="onPackChange($event)" [packs]="allPacks"></pack-selector>
 </div>
 <div>
-  <trait-selector (selectionChange)="onTraitChange($event)"></trait-selector>
+  <trait-selector (selectionChange)="onTraitChange($event)" [traits]="allTraits"></trait-selector>
 </div>
 
 <div class="actions">
@@ -15,4 +15,4 @@
 
 <last-draw [drawn]="lastDrawnWeaknesses"></last-draw>
 
-<weakness-list [weaknesses]="weaknessList"></weakness-list>
+<weakness-list [weaknesses]="weaknessList" [packs]="allPacks"></weakness-list>

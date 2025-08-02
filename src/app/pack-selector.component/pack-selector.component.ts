@@ -1,5 +1,4 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, EventEmitter, Output, OnChanges, Input, SimpleChanges } from '@angular/core';
 import { SelectorOption } from '../selector.component/selector.component';
 import { SelectorComponent } from '../selector.component/selector.component';
 
@@ -16,15 +15,15 @@ import { SelectorComponent } from '../selector.component/selector.component';
     </selector>
   `
 })
-export class PackSelectorComponent implements OnInit {
-  options: SelectorOption[] = [];
+export class PackSelectorComponent implements OnChanges {
+  @Input() packs: Record<string, string> = {};
   @Output() selectionChange = new EventEmitter<Set<string>>();
 
-  constructor(private http: HttpClient) { }
+  options: SelectorOption[] = [];
 
-  ngOnInit(): void {
-    this.http.get<{ [code: string]: string }>('assets/packs.json').subscribe(data => {
-      this.options = Object.entries(data).map(([code, label]) => ({ label, value: code }));
-    });
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['packs']) {
+      this.options = Object.entries(this.packs).map(([code, label]) => ({ label, value: code }));
+    }
   }
 }

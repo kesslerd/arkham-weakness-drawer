@@ -20,9 +20,12 @@ import { WeaknessListComponent } from './weakness-list.component/weakness-list.c
   styleUrl: './app.scss'
 })
 export class App implements OnInit {
-  protected readonly title = 'Random Basic Weakness Picker';
+  protected readonly title = 'Draw Random Basic Weakness';
 
   allWeaknesses: BasicWeakness[] = [];
+  allPacks: Record<string, string> = {};
+  allTraits: string[] = [];
+
   lastDrawnWeaknesses: BasicWeakness[] = [];
   weaknessList: BasicWeakness[] = [];
 
@@ -34,6 +37,14 @@ export class App implements OnInit {
   ngOnInit(): void {
     this.http.get<BasicWeakness[]>('assets/basic_weaknesses.json').subscribe(data => {
       this.allWeaknesses = data;
+    });
+
+    this.http.get<Record<string, string>>('assets/packs.json').subscribe(data => {
+      this.allPacks = data;
+    });
+
+    this.http.get<string[]>('assets/traits.json').subscribe(data => {
+      this.allTraits = data
     });
   }
 

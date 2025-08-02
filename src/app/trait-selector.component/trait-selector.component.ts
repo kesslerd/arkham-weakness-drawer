@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Output, OnChanges, Input, SimpleChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { SelectorOption } from '../selector.component/selector.component';
 import { SelectorComponent } from '../selector.component/selector.component';
@@ -16,9 +16,12 @@ import { SelectorComponent } from '../selector.component/selector.component';
     </selector>
   `
 })
-export class TraitSelectorComponent implements OnInit {
-  options: SelectorOption[] = [];
+export class TraitSelectorComponent implements OnChanges {
+  @Input() traits: string[] = [];
   @Output() selectionChange = new EventEmitter<Set<string>>();
+
+
+  options: SelectorOption[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -26,6 +29,12 @@ export class TraitSelectorComponent implements OnInit {
     this.http.get<string[]>('assets/traits.json').subscribe(data => {
       this.options = data.map(t => ({ label: t, value: t }));
     });
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['traits']) {
+      this.options = Object.entries(this.traits).map(([code, label]) => ({ label, value: code }));
+    }
   }
 
   onSelectorChange(selection: Set<string>) {
