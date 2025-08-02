@@ -67,10 +67,27 @@ export class App implements OnInit {
       card.traits.some(trait => this.selectedTraits.has(trait))
     );
 
-    const shuffled = valid.sort(() => 0.5 - Math.random());
+    const shuffled = this.shuffle(valid)
     const drawn = shuffled.slice(0, count);
 
     this.lastDrawnWeaknesses = drawn;
     this.weaknessList = [...drawn, ...this.weaknessList];
   }
+
+  shuffle<T>(array: T[]): T[] {
+    const result = [...array];
+    let currentIndex = result.length;
+
+    while (currentIndex-- !== 0) {
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+
+      [result[currentIndex], result[randomIndex]] = [
+        result[randomIndex],
+        result[currentIndex],
+      ];
+    }
+
+    return result;
+  }
+
 }
