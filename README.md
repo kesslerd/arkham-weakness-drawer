@@ -13,7 +13,7 @@ The images and data comes from [ArkhamDB](https://arkhamdb.com/)
 to generate the json used for the weaknesses, run:
 
 ```bash
-ng arkham
+npm run arkham
 ```
 
 ### Development server

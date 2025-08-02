@@ -16,8 +16,8 @@ async function run() {
         .filter(card => card.pack_code != 'rcore') // filter revisded core
         .sort((a, b) => a.code.localeCompare(b.code));
 
-    // JSON 1: basic_weaknesses.json with selected fields and split traits
     const filtered = basicWeaknesses.map(card => ({
+        type_code: card.type_code,
         pack_code: card.pack_code,
         imagesrc: "https://arkhamdb.com/" + card.imagesrc,
         name: card.name,
@@ -37,7 +37,14 @@ async function run() {
         }
     }
 
-    // JSON 3: traits.json using the already-parsed `traits` arrays
+    const typesMap = {};
+    for (const card of basicWeaknesses) {
+        if (card.type_name && card.type_code && !typesMap[card.type_code]) {
+            typesMap[card.type_code] = card.type_name;
+        }
+    }
+
+
     const traitSet = new Set();
     filtered.forEach(entry => {
         entry.traits.forEach(trait => traitSet.add(trait));
@@ -49,6 +56,7 @@ async function run() {
     fs.writeFileSync(path.join(OUTPUT_DIR, 'basic_weaknesses.json'), JSON.stringify(filtered, null, 2));
     fs.writeFileSync(path.join(OUTPUT_DIR, 'packs.json'), JSON.stringify(packsMap, null, 2));
     fs.writeFileSync(path.join(OUTPUT_DIR, 'traits.json'), JSON.stringify(traitArray, null, 2));
+    fs.writeFileSync(path.join(OUTPUT_DIR, 'types.json'), JSON.stringify(typesMap, null, 2));
 
     console.log('✅ All JSON files have been written to /src/assets');
 }

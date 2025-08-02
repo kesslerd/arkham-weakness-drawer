@@ -6,6 +6,7 @@ import { PackSelectorComponent } from './pack-selector.component/pack-selector.c
 import { TraitSelectorComponent } from './trait-selector.component/trait-selector.component';
 import { LastDrawComponent } from './last-draw.component/last-draw.component';
 import { WeaknessListComponent } from './weakness-list.component/weakness-list.component';
+import { TypeSelectorComponent } from './type-selector.component/type-selector.component';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,7 @@ import { WeaknessListComponent } from './weakness-list.component/weakness-list.c
   imports: [
     PackSelectorComponent,
     TraitSelectorComponent,
+    TypeSelectorComponent,
     LastDrawComponent,
     WeaknessListComponent
   ],
@@ -24,6 +26,7 @@ export class App implements OnInit {
 
   allWeaknesses: BasicWeakness[] = [];
   allPacks: Record<string, string> = {};
+  allTypes: Record<string, string> = {};
   allTraits: string[] = [];
 
   lastDrawnWeaknesses: BasicWeakness[] = [];
@@ -31,6 +34,7 @@ export class App implements OnInit {
 
   selectedPacks: Set<string> = new Set();
   selectedTraits: Set<string> = new Set();
+  selectedTypes: Set<string> = new Set();
 
   constructor(private http: HttpClient) { }
 
@@ -46,6 +50,10 @@ export class App implements OnInit {
     this.http.get<string[]>('assets/traits.json').subscribe(data => {
       this.allTraits = data
     });
+
+    this.http.get<Record<string, string>>('assets/types.json').subscribe(data => {
+      this.allTypes = data
+    });
   }
 
   onPackChange(packs: Set<string>) {
@@ -56,6 +64,10 @@ export class App implements OnInit {
     this.selectedTraits = traits;
   }
 
+  onTypeChange(types: Set<string>) {
+    this.selectedTypes = types;
+  }
+
   clear(): void {
     this.lastDrawnWeaknesses = [];
     this.weaknessList = [];
@@ -64,7 +76,8 @@ export class App implements OnInit {
   draw(count: number): void {
     const valid = this.allWeaknesses.filter(card =>
       this.selectedPacks.has(card.pack_code) &&
-      card.traits.some(trait => this.selectedTraits.has(trait))
+      card.traits.some(trait => this.selectedTraits.has(trait)) &&
+      this.selectedTypes.has(card.type_code)
     );
 
     const shuffled = this.shuffle(valid)

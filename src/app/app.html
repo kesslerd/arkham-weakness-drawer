@@ -6,6 +6,9 @@
 <div>
   <trait-selector (selectionChange)="onTraitChange($event)" [traits]="allTraits"></trait-selector>
 </div>
+<div>
+  <type-selector (selectionChange)="onTypeChange($event)" [types]="allTypes"></type-selector>
+</div>
 
 <div class="actions">
   <button (click)="clear()">Clear</button>
