@@ -1,0 +1,5 @@
+<div class="last-draw-container">
+    @for (card of drawn; track card.imagesrc) {
+    <img [src]="card.imagesrc" [alt]="card.name" class="drawn-card" />
+    }
+</div>

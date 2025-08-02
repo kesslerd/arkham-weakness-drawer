@@ -1,0 +1,517 @@
+[
+  {
+    "pack_code": "core",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/01096.png",
+    "name": "Amnesia",
+    "position": 96,
+    "traits": [
+      "Madness"
+    ]
+  },
+  {
+    "pack_code": "core",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/01097.png",
+    "name": "Paranoia",
+    "position": 97,
+    "traits": [
+      "Madness"
+    ]
+  },
+  {
+    "pack_code": "core",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/01098.png",
+    "name": "Haunted",
+    "position": 98,
+    "traits": [
+      "Curse"
+    ]
+  },
+  {
+    "pack_code": "core",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/01099.png",
+    "name": "Psychosis",
+    "position": 99,
+    "traits": [
+      "Madness"
+    ]
+  },
+  {
+    "pack_code": "core",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/01100.png",
+    "name": "Hypochondria",
+    "position": 100,
+    "traits": [
+      "Madness"
+    ]
+  },
+  {
+    "pack_code": "core",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/01101.png",
+    "name": "Mob Enforcer",
+    "position": 101,
+    "traits": [
+      "Humanoid",
+      "Criminal"
+    ]
+  },
+  {
+    "pack_code": "core",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/01102.png",
+    "name": "Silver Twilight Acolyte",
+    "position": 102,
+    "traits": [
+      "Humanoid",
+      "Cultist",
+      "Silver Twilight"
+    ]
+  },
+  {
+    "pack_code": "core",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/01103.png",
+    "name": "Stubborn Detective",
+    "position": 103,
+    "traits": [
+      "Humanoid",
+      "Detective"
+    ]
+  },
+  {
+    "pack_code": "dwl",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/02037.png",
+    "name": "Indebted",
+    "position": 37,
+    "traits": [
+      "Flaw"
+    ]
+  },
+  {
+    "pack_code": "dwl",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/02038.png",
+    "name": "Internal Injury",
+    "position": 38,
+    "traits": [
+      "Injury"
+    ]
+  },
+  {
+    "pack_code": "dwl",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/02039.png",
+    "name": "Chronophobia",
+    "position": 39,
+    "traits": [
+      "Madness"
+    ]
+  },
+  {
+    "pack_code": "ptc",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/03040.png",
+    "name": "Overzealous",
+    "position": 40,
+    "traits": [
+      "Flaw"
+    ]
+  },
+  {
+    "pack_code": "ptc",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/03041.png",
+    "name": "Drawing the Sign",
+    "position": 41,
+    "traits": [
+      "Pact",
+      "Madness"
+    ]
+  },
+  {
+    "pack_code": "ptc",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/03042.png",
+    "name": "The Thing That Follows",
+    "position": 42,
+    "traits": [
+      "Monster",
+      "Curse"
+    ]
+  },
+  {
+    "pack_code": "tfa",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/04038.png",
+    "name": "Dark Pact",
+    "position": 38,
+    "traits": [
+      "Pact"
+    ]
+  },
+  {
+    "pack_code": "tfa",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/04040.png",
+    "name": "Doomed",
+    "position": 40,
+    "traits": [
+      "Curse"
+    ]
+  },
+  {
+    "pack_code": "tcu",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/05041.png",
+    "name": "The 13th Vision",
+    "position": 41,
+    "traits": [
+      "Omen"
+    ]
+  },
+  {
+    "pack_code": "tcu",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/05042.png",
+    "name": "The Tower • XVI",
+    "position": 42,
+    "traits": [
+      "Omen",
+      "Tarot"
+    ]
+  },
+  {
+    "pack_code": "tde",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/06035.png",
+    "name": "Self-Centered",
+    "position": 35,
+    "traits": [
+      "Flaw"
+    ]
+  },
+  {
+    "pack_code": "tde",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/06036.png",
+    "name": "Kleptomania",
+    "position": 36,
+    "traits": [
+      "Madness",
+      "Talent"
+    ]
+  },
+  {
+    "pack_code": "tde",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/06037.png",
+    "name": "Narcolepsy",
+    "position": 37,
+    "traits": [
+      "Madness"
+    ]
+  },
+  {
+    "pack_code": "tde",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/06038.png",
+    "name": "Your Worst Nightmare",
+    "position": 38,
+    "traits": [
+      "Monster"
+    ]
+  },
+  {
+    "pack_code": "tic",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/07038.png",
+    "name": "Accursed Follower",
+    "position": 38,
+    "traits": [
+      "Humanoid",
+      "Cultist",
+      "Cursed"
+    ]
+  },
+  {
+    "pack_code": "tic",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/07039.png",
+    "name": "Dread Curse",
+    "position": 39,
+    "traits": [
+      "Curse"
+    ]
+  },
+  {
+    "pack_code": "tic",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/07040.png",
+    "name": "Day of Reckoning",
+    "position": 40,
+    "traits": [
+      "Endtimes"
+    ]
+  },
+  {
+    "pack_code": "eoep",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/08130.png",
+    "name": "Arm Injury",
+    "position": 130,
+    "traits": [
+      "Injury"
+    ]
+  },
+  {
+    "pack_code": "eoep",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/08131.png",
+    "name": "Leg Injury",
+    "position": 131,
+    "traits": [
+      "Injury"
+    ]
+  },
+  {
+    "pack_code": "eoep",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/08132.png",
+    "name": "Panic",
+    "position": 132,
+    "traits": [
+      "Madness"
+    ]
+  },
+  {
+    "pack_code": "eoep",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/08133.png",
+    "name": "Stupor",
+    "position": 133,
+    "traits": [
+      "Madness"
+    ]
+  },
+  {
+    "pack_code": "tskp",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/09124.png",
+    "name": "Lurker in the Dark",
+    "position": 124,
+    "traits": [
+      "Monster",
+      "Shoggoth"
+    ]
+  },
+  {
+    "pack_code": "tskp",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/09125.png",
+    "name": "Quantum Paradox",
+    "position": 125,
+    "traits": [
+      "Paradox"
+    ]
+  },
+  {
+    "pack_code": "tskp",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/09126.png",
+    "name": "Pay Your Due",
+    "position": 126,
+    "traits": [
+      "Pact"
+    ]
+  },
+  {
+    "pack_code": "tskp",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/09127.png",
+    "name": "Ectoplasmic Horror",
+    "position": 127,
+    "traits": [
+      "Monster",
+      "Geist"
+    ]
+  },
+  {
+    "pack_code": "tskp",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/09128.png",
+    "name": "Underprepared",
+    "position": 128,
+    "traits": [
+      "Blunder"
+    ]
+  },
+  {
+    "pack_code": "fhvp",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/10135.jpg",
+    "name": "Maimed Hand",
+    "position": 135,
+    "traits": [
+      "Injury"
+    ]
+  },
+  {
+    "pack_code": "fhvp",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/10136.jpg",
+    "name": "Back Injury",
+    "position": 136,
+    "traits": [
+      "Injury"
+    ]
+  },
+  {
+    "pack_code": "fhvp",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/10137.jpg",
+    "name": "The Silver Moth",
+    "position": 137,
+    "traits": [
+      "Item",
+      "Relic"
+    ]
+  },
+  {
+    "pack_code": "fhvp",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/10138.jpg",
+    "name": "Vow of Drzytelech",
+    "position": 138,
+    "traits": [
+      "Pact"
+    ]
+  },
+  {
+    "pack_code": "tdcp",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/11126.jpg",
+    "name": "Down and Out",
+    "position": 126,
+    "traits": [
+      "Hardship"
+    ]
+  },
+  {
+    "pack_code": "tdcp",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/11127.jpg",
+    "name": "Morbid Curiosity",
+    "position": 127,
+    "traits": [
+      "Flaw"
+    ]
+  },
+  {
+    "pack_code": "tdcp",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/11128.jpg",
+    "name": "Disruptive Poltergeist",
+    "position": 128,
+    "traits": [
+      "Curse"
+    ]
+  },
+  {
+    "pack_code": "tdcp",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/11129.jpg",
+    "name": "Frenzied",
+    "position": 129,
+    "traits": [
+      "Madness"
+    ]
+  },
+  {
+    "pack_code": "rtdwl",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/51011.png",
+    "name": "Through the Gates",
+    "position": 11,
+    "traits": [
+      "Pact",
+      "Mystery"
+    ]
+  },
+  {
+    "pack_code": "rtptc",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/52011.png",
+    "name": "Unspeakable Oath",
+    "position": 11,
+    "traits": [
+      "Madness",
+      "Pact"
+    ]
+  },
+  {
+    "pack_code": "rtptc",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/52012.png",
+    "name": "Unspeakable Oath",
+    "position": 12,
+    "traits": [
+      "Madness",
+      "Pact"
+    ]
+  },
+  {
+    "pack_code": "rtptc",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/52013.png",
+    "name": "Unspeakable Oath",
+    "position": 13,
+    "traits": [
+      "Madness",
+      "Pact"
+    ]
+  },
+  {
+    "pack_code": "rttfa",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/53012.png",
+    "name": "Dendromorphosis",
+    "position": 12,
+    "traits": [
+      "Curse",
+      "Flora"
+    ]
+  },
+  {
+    "pack_code": "rttfa",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/53013.png",
+    "name": "Offer You Cannot Refuse",
+    "position": 13,
+    "traits": [
+      "Pact"
+    ]
+  },
+  {
+    "pack_code": "rttcu",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/54014.png",
+    "name": "Damned",
+    "position": 14,
+    "traits": [
+      "Curse",
+      "Omen"
+    ]
+  },
+  {
+    "pack_code": "rttcu",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/54015.png",
+    "name": "The Devil • XV",
+    "position": 15,
+    "traits": [
+      "Omen",
+      "Tarot"
+    ]
+  },
+  {
+    "pack_code": "nat",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/60104.png",
+    "name": "Self-Destructive",
+    "position": 4,
+    "traits": [
+      "Flaw"
+    ]
+  },
+  {
+    "pack_code": "har",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/60204.png",
+    "name": "Obsessive",
+    "position": 4,
+    "traits": [
+      "Flaw"
+    ]
+  },
+  {
+    "pack_code": "win",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/60304.png",
+    "name": "Reckless",
+    "position": 4,
+    "traits": [
+      "Flaw"
+    ]
+  },
+  {
+    "pack_code": "jac",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/60404.png",
+    "name": "Nihilism",
+    "position": 4,
+    "traits": [
+      "Madness"
+    ]
+  },
+  {
+    "pack_code": "ste",
+    "imagesrc": "https://arkhamdb.com//bundles/cards/60504.png",
+    "name": "Atychiphobia",
+    "position": 4,
+    "traits": [
+      "Madness"
+    ]
+  }
+]

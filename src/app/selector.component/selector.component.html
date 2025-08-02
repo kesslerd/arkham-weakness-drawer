@@ -1,0 +1,17 @@
+<div class="toolbar">
+    <button type="button" (click)="toggleAll()">
+        {{ allSelected ? 'Deselect All' : 'Select All' }}
+    </button>
+</div>
+
+<div class="selector-container">
+    @for (opt of options; track opt.value) {
+    <label class="selector-checkbox">
+        <input type="checkbox" [checked]="isChecked(opt.value)"
+            (change)="onCheckboxChange(opt.value, $event.target.checked)" />
+        {{ opt.label }}
+    </label>
+    }
+
+
+</div>

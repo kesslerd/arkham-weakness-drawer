@@ -1,0 +1,39 @@
+.toolbar {
+    padding: 0.5rem 1rem;
+}
+
+.toolbar button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.95rem;
+    border: 1px solid #888;
+    border-radius: 6px;
+    background-color: #f2f2f2;
+    cursor: pointer;
+}
+
+.toolbar button:hover {
+    background-color: #e0e0e0;
+}
+
+.selector-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 1rem;
+}
+
+.selector-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    border: 1px solid #ccc;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.selector-checkbox:hover {
+    background-color: #eef;
+}

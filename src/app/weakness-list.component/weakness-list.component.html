@@ -1,0 +1,20 @@
+<table class="weakness-table">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Name</th>
+            <th>Pack</th>
+            <th>Position</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (weakness of weaknesses; track weakness.name) {
+        <tr>
+            <td><img [src]="weakness.imagesrc" alt="card image" class="card-img" /></td>
+            <td>{{ weakness.name }}</td>
+            <td>{{ getPackName(weakness.pack_code) }}</td>
+            <td>{{ weakness.position }}</td>
+        </tr>
+        }
+    </tbody>
+</table>
