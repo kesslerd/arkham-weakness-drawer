@@ -1,6 +1,5 @@
 import { Component, OnInit, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { RouterOutlet } from '@angular/router';
 import { BasicWeakness } from './model/basic-weakness.model';
 
 import { PackSelectorComponent } from './pack-selector.component/pack-selector.component';
@@ -12,7 +11,6 @@ import { WeaknessListComponent } from './weakness-list.component/weakness-list.c
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
     PackSelectorComponent,
     TraitSelectorComponent,
     LastDrawComponent,

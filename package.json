@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "arkham": "node scripts/arkhamdb-downloader.js",
+    "github": "ng build --configuration production  --base-href='/arkham-weakness-drawer/'",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
