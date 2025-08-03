@@ -1,14 +1,33 @@
 .last-draw-container {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    gap: 1.5rem;
     margin-top: 1rem;
     flex-wrap: wrap;
-}
 
-.drawn-card {
-    max-width: 280px;
-    height: auto;
-    border-radius: 4px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    .card-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 280px;
+        text-align: center;
+    }
+
+    .card-name {
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+    }
+
+    .drawn-card {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-meta {
+        margin-top: 0.5rem;
+        font-size: 0.95rem;
+        color: #555;
+    }
 }

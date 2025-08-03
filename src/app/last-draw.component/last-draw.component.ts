@@ -8,4 +8,5 @@ import { BasicWeakness } from '../model/basic-weakness.model';
 })
 export class LastDrawComponent {
   @Input() drawn: BasicWeakness[] = [];
+  @Input() packs: Record<string, string> = {};
 }

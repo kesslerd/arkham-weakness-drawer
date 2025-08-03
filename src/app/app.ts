@@ -5,7 +5,6 @@ import { BasicWeakness } from './model/basic-weakness.model';
 import { PackSelectorComponent } from './pack-selector.component/pack-selector.component';
 import { TraitSelectorComponent } from './trait-selector.component/trait-selector.component';
 import { LastDrawComponent } from './last-draw.component/last-draw.component';
-import { WeaknessListComponent } from './weakness-list.component/weakness-list.component';
 import { TypeSelectorComponent } from './type-selector.component/type-selector.component';
 
 @Component({
@@ -15,8 +14,7 @@ import { TypeSelectorComponent } from './type-selector.component/type-selector.c
     PackSelectorComponent,
     TraitSelectorComponent,
     TypeSelectorComponent,
-    LastDrawComponent,
-    WeaknessListComponent
+    LastDrawComponent
   ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
@@ -30,7 +28,6 @@ export class App implements OnInit {
   allTraits: string[] = [];
 
   lastDrawnWeaknesses: BasicWeakness[] = [];
-  weaknessList: BasicWeakness[] = [];
 
   selectedPacks: Set<string> = new Set();
   selectedTraits: Set<string> = new Set();
@@ -70,7 +67,6 @@ export class App implements OnInit {
 
   clear(): void {
     this.lastDrawnWeaknesses = [];
-    this.weaknessList = [];
   }
 
   draw(count: number): void {
@@ -84,7 +80,6 @@ export class App implements OnInit {
     const drawn = shuffled.slice(0, count);
 
     this.lastDrawnWeaknesses = drawn;
-    this.weaknessList = [...drawn, ...this.weaknessList];
   }
 
   shuffle<T>(array: T[]): T[] {

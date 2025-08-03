@@ -1,5 +1,11 @@
 <div class="last-draw-container">
     @for (card of drawn; track card.imagesrc) {
-    <img [src]="card.imagesrc" [alt]="card.name" class="drawn-card" />
+    <div class="card-wrapper">
+        <h2 class="card-name">{{ card.name }}</h2>
+        <img [src]="card.imagesrc" [alt]="card.name" class="drawn-card" />
+        <div class="card-meta">
+            {{ packs[card.pack_code] || 'Unknown Pack' }} • #{{ card.position }}
+        </div>
+    </div>
     }
 </div>
