@@ -17,6 +17,7 @@ async function run() {
         .sort((a, b) => a.code.localeCompare(b.code));
 
     const filtered = basicWeaknesses.map(card => ({
+        id: card.code,
         type_code: card.type_code,
         pack_code: card.pack_code,
         imagesrc: "https://arkhamdb.com/" + card.imagesrc,

@@ -1,7 +1,10 @@
 <div class="last-draw-container">
     @for (card of drawn; track card.imagesrc) {
     <div class="card-wrapper">
-        <h2 class="card-name">{{ card.name }}</h2>
+        <div class="card-header">
+            <h2 class="card-name">{{ card.name }}</h2>
+            <button class="veto-button" (click)="onVeto(card)" title="Veto Card">✖</button>
+        </div>
         <img [src]="card.imagesrc" [alt]="card.name" class="drawn-card" />
         <div class="card-meta">
             {{ packs[card.pack_code] || 'Unknown Pack' }} • #{{ card.position }}

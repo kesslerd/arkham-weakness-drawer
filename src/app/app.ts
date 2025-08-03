@@ -69,6 +69,12 @@ export class App implements OnInit {
     this.lastDrawnWeaknesses = [];
   }
 
+  onVeto(card: BasicWeakness): void {
+    this.lastDrawnWeaknesses = this.lastDrawnWeaknesses.filter(
+      w => w.id !== card.id
+    );
+  }
+
   draw(count: number): void {
     const valid = this.allWeaknesses.filter(card =>
       this.selectedPacks.has(card.pack_code) &&

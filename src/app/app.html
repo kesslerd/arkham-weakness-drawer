@@ -11,9 +11,9 @@
 </div>
 
 <div class="actions">
-  <button (click)="clear()">Clear</button>
+  <button (click)="clear()">Reset</button>
   <button (click)="draw(1)">Draw One</button>
   <button (click)="draw(3)">Draw Three</button>
 </div>
 
-<last-draw [drawn]="lastDrawnWeaknesses" [packs]="allPacks"></last-draw>
+<last-draw [drawn]="lastDrawnWeaknesses" [packs]="allPacks" (veto)="onVeto($event)"></last-draw>

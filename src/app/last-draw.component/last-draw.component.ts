@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { BasicWeakness } from '../model/basic-weakness.model';
 
 @Component({
@@ -9,4 +9,10 @@ import { BasicWeakness } from '../model/basic-weakness.model';
 export class LastDrawComponent {
   @Input() drawn: BasicWeakness[] = [];
   @Input() packs: Record<string, string> = {};
+
+  @Output() veto = new EventEmitter<BasicWeakness>();
+
+  onVeto(card: BasicWeakness) {
+    this.veto.emit(card);
+  }
 }
