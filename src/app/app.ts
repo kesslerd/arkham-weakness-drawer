@@ -36,9 +36,7 @@ export class App implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<BasicWeakness[]>('assets/basic_weaknesses.json').subscribe(data => {
-      this.allWeaknesses = data;
-    });
+    this.loadWeaknesses()
 
     this.http.get<Record<string, string>>('assets/packs.json').subscribe(data => {
       this.allPacks = data;
@@ -50,6 +48,12 @@ export class App implements OnInit {
 
     this.http.get<Record<string, string>>('assets/types.json').subscribe(data => {
       this.allTypes = data
+    });
+  }
+
+  private loadWeaknesses(): void {
+    this.http.get<BasicWeakness[]>('assets/basic_weaknesses.json').subscribe(data => {
+      this.allWeaknesses = this.shuffle(data);
     });
   }
 
@@ -67,6 +71,7 @@ export class App implements OnInit {
 
   clear(): void {
     this.lastDrawnWeaknesses = [];
+    this.loadWeaknesses();
   }
 
   onVeto(card: BasicWeakness): void {
@@ -82,10 +87,12 @@ export class App implements OnInit {
       this.selectedTypes.has(card.type_code)
     );
 
-    const shuffled = this.shuffle(valid)
-    const drawn = shuffled.slice(0, count);
+    const drawn = valid.slice(0, count);
 
-    this.lastDrawnWeaknesses = drawn;
+    const drawnIds = new Set(drawn.map(card => card.id));
+    this.allWeaknesses = this.allWeaknesses.filter(card => !drawnIds.has(card.id));
+
+    this.lastDrawnWeaknesses = [...this.lastDrawnWeaknesses, ...drawn];
   }
 
   shuffle<T>(array: T[]): T[] {
@@ -104,4 +111,12 @@ export class App implements OnInit {
     return result;
   }
 
+  chooseRandom(): void {
+    if (this.lastDrawnWeaknesses.length <= 1) return;
+
+    const randomIndex = Math.floor(Math.random() * this.lastDrawnWeaknesses.length);
+    const chosen = this.lastDrawnWeaknesses[randomIndex];
+
+    this.lastDrawnWeaknesses = [chosen];
+  }
 }
