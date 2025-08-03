@@ -1,5 +1,6 @@
 <div class="collapsible-header" (click)="toggleFilters()">
     <span class="title">{{ title }} Filters</span>
+    <span class="selectedIndicator">({{selected.size}}/{{options.length}})</span>
     <span class="arrow" [class.open]="showFilter">▼</span>
 </div>
 

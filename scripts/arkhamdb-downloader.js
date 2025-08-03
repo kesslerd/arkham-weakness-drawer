@@ -33,7 +33,8 @@ async function run() {
     const packsMap = {};
     for (const card of basicWeaknesses) {
         if (card.pack_name && card.pack_code && !packsMap[card.pack_code]) {
-            packsMap[card.pack_code] = card.pack_name;
+            const cleanName = card.pack_name.replace(/ Investigator Expansion$/, '');
+            packsMap[card.pack_code] = cleanName;
         }
     }
 
