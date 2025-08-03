@@ -1,7 +1,7 @@
 {
-  "treachery": "Treachery",
+  "asset": "Asset",
   "enemy": "Enemy",
   "event": "Event",
-  "asset": "Asset",
-  "skill": "Skill"
+  "skill": "Skill",
+  "treachery": "Treachery"
 }

@@ -43,6 +43,9 @@ async function run() {
             typesMap[card.type_code] = card.type_name;
         }
     }
+    const sortedTypes = Object.entries(typesMap)
+        .sort((a, b) => a[1].localeCompare(b[1])); // sort by type_name
+    const sortedTypesMap = Object.fromEntries(sortedTypes);
 
 
     const traitSet = new Set();
@@ -56,14 +59,14 @@ async function run() {
     fs.writeFileSync(path.join(OUTPUT_DIR, 'basic_weaknesses.json'), JSON.stringify(filtered, null, 2));
     fs.writeFileSync(path.join(OUTPUT_DIR, 'packs.json'), JSON.stringify(packsMap, null, 2));
     fs.writeFileSync(path.join(OUTPUT_DIR, 'traits.json'), JSON.stringify(traitArray, null, 2));
-    fs.writeFileSync(path.join(OUTPUT_DIR, 'types.json'), JSON.stringify(typesMap, null, 2));
+    fs.writeFileSync(path.join(OUTPUT_DIR, 'types.json'), JSON.stringify(sortedTypesMap, null, 2));
 
-    console.log('✅ All JSON files have been written to /src/assets');
+    console.log('All JSON files have been written');
 }
 
 console.log('Start download');
 
 run().catch(err => {
-    console.error('❌ Error during build:', err);
+    console.error('Error during build:', err);
     process.exit(1);
 });
