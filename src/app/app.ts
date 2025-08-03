@@ -7,6 +7,8 @@ import { TraitSelectorComponent } from './trait-selector.component/trait-selecto
 import { LastDrawComponent } from './last-draw.component/last-draw.component';
 import { TypeSelectorComponent } from './type-selector.component/type-selector.component';
 
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -33,7 +35,7 @@ export class App implements OnInit {
   selectedTraits: Set<string> = new Set();
   selectedTypes: Set<string> = new Set();
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.loadWeaknesses()
@@ -81,17 +83,25 @@ export class App implements OnInit {
   }
 
   draw(count: number): void {
+    if (this.allWeaknesses.length === 0) {
+      this.toastr.warning('All cards are drawn or vetoed, please reset');
+      return;
+    }
+
     const valid = this.allWeaknesses.filter(card =>
       this.selectedPacks.has(card.pack_code) &&
       card.traits.some(trait => this.selectedTraits.has(trait)) &&
       this.selectedTypes.has(card.type_code)
     );
 
-    const drawn = valid.slice(0, count);
+    if (valid.length === 0) {
+      this.toastr.warning('No more cards matching the filter, please change the filters');
+      return;
+    }
 
+    const drawn = valid.slice(0, count);
     const drawnIds = new Set(drawn.map(card => card.id));
     this.allWeaknesses = this.allWeaknesses.filter(card => !drawnIds.has(card.id));
-
     this.lastDrawnWeaknesses = [...this.lastDrawnWeaknesses, ...drawn];
   }
 
