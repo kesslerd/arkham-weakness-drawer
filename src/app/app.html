@@ -1,20 +1,31 @@
-<h1>{{ title }}</h1>
+<div class="main">
+  <div class="content">
+    <h1>{{ title }}</h1>
 
-<div>
-  <pack-selector (selectionChange)="onPackChange($event)" [packs]="allPacks"></pack-selector>
-</div>
-<div>
-  <trait-selector (selectionChange)="onTraitChange($event)" [traits]="allTraits"></trait-selector>
-</div>
-<div>
-  <type-selector (selectionChange)="onTypeChange($event)" [types]="allTypes"></type-selector>
-</div>
+    <div>
+      <pack-selector (selectionChange)="onPackChange($event)" [packs]="allPacks"></pack-selector>
+    </div>
+    <div>
+      <trait-selector (selectionChange)="onTraitChange($event)" [traits]="allTraits"></trait-selector>
+    </div>
+    <div>
+      <type-selector (selectionChange)="onTypeChange($event)" [types]="allTypes"></type-selector>
+    </div>
 
-<div class="actions">
-  <button (click)="clear()">Reset</button>
-  <button (click)="draw(1)">Draw One</button>
-  <button (click)="draw(3)">Draw Three</button>
-  <button (click)="chooseRandom()" [disabled]="lastDrawnWeaknesses.length === 0">Choose Random from drawn</button>
-</div>
+    <div class="actions">
+      <button (click)="clear()">Reset</button>
+      <button (click)="draw(1)">Draw One</button>
+      <button (click)="draw(3)">Draw Three</button>
+      <button (click)="chooseRandom()" [disabled]="lastDrawnWeaknesses.length === 0">Choose Random from drawn</button>
+    </div>
 
-<last-draw [drawn]="lastDrawnWeaknesses" [packs]="allPacks" (veto)="onVeto($event)"></last-draw>
+    <last-draw [drawn]="lastDrawnWeaknesses" [packs]="allPacks" (veto)="onVeto($event)"></last-draw>
+  </div>
+
+  <footer class="footer">
+    <p>
+      Arkham Horror: The Card Game is copyrighted by Fantasy Flight Games.
+      This website is not produced, endorsed, supported, or affiliated with Fantasy Flight Games.
+    </p>
+  </footer>
+</div>
