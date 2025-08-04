@@ -22,8 +22,6 @@ import { ToastrService } from 'ngx-toastr';
   styleUrl: './app.scss'
 })
 export class App implements OnInit {
-  protected readonly title = 'Draw Random Basic Weakness';
-
   allWeaknesses: BasicWeakness[] = [];
   allPacks: Record<string, string> = {};
   allTypes: Record<string, string> = {};
@@ -38,6 +36,7 @@ export class App implements OnInit {
   constructor(private http: HttpClient, private toastr: ToastrService) { }
 
   ngOnInit(): void {
+    // todo make a service
     this.loadWeaknesses()
 
     this.http.get<Record<string, string>>('assets/packs.json').subscribe(data => {
@@ -82,6 +81,7 @@ export class App implements OnInit {
     );
   }
 
+  // todo maybe a service for the card handling
   draw(count: number): void {
     if (this.allWeaknesses.length === 0) {
       this.toastr.warning('All cards are drawn or vetoed, please reset');

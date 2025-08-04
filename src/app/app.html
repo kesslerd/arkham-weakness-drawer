@@ -1,6 +1,7 @@
+<!-- TODO translation file, footer component, help component, maybe don't provide allPacks, allTraits, allTypes but let the componets get the data from the service-->
 <div class="main">
   <div class="content">
-    <h1>{{ title }}</h1>
+    <h1>Draw Random Basic Weakness</h1>
 
     <div>
       <pack-selector (selectionChange)="onPackChange($event)" [packs]="allPacks"></pack-selector>
@@ -13,11 +14,19 @@
     </div>
 
     <div class="actions">
+      <button (click)="draw(1)">Draw</button>
+      <button (click)="chooseRandom()" [disabled]="lastDrawnWeaknesses.length < 2">Random from drawn</button>
       <button (click)="clear()">Reset</button>
-      <button (click)="draw(1)">Draw One</button>
-      <button (click)="draw(3)">Draw Three</button>
-      <button (click)="chooseRandom()" [disabled]="lastDrawnWeaknesses.length === 0">Choose Random from drawn</button>
     </div>
+
+    @if(lastDrawnWeaknesses.length === 0) {
+    <div class="help-text">
+      <p>Select your desired filters and click <strong>Draw</strong> to get random weaknesses.</p>
+      <p>Veto cards by clicking the <strong>✖</strong> next to the card title.</p>
+      <p>Randomly select a card out of the visible cards by clicking <strong>Random from drawn</strong>.</p>
+      <p>Vetoed cards will not show up again until you <strong>reset</strong>.</p>
+    </div>
+    }
 
     <last-draw [drawn]="lastDrawnWeaknesses" [packs]="allPacks" (veto)="onVeto($event)"></last-draw>
   </div>
