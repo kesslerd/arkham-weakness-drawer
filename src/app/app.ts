@@ -102,7 +102,7 @@ export class App implements OnInit {
     const drawn = valid.slice(0, count);
     const drawnIds = new Set(drawn.map(card => card.id));
     this.allWeaknesses = this.allWeaknesses.filter(card => !drawnIds.has(card.id));
-    this.lastDrawnWeaknesses = [...this.lastDrawnWeaknesses, ...drawn];
+    this.lastDrawnWeaknesses = [...drawn, ...this.lastDrawnWeaknesses];
   }
 
   shuffle<T>(array: T[]): T[] {
